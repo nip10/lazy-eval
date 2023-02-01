@@ -8,10 +8,10 @@ Lazy evaluation is an evaluation strategy which delays the evaluation of an expr
 
 ## Usage
 
-First, import the `lazy` class.
+First, import the `Lazy` class.
 
 ```ts
-import Lazy from 'yld-lazy';
+import Lazy from '<path-to-index.ts>';
 ```
 
 Then, create a Lazy instance by calling `new Lazy()`.
@@ -54,7 +54,11 @@ array supplied to evaluate.
 | arg1...argN-1 | `number`   | The argument to pass to the function.                                                                    | No       |
 | argN          | `number`   | The **last** argument to pass to the function. Value needs to exist in the target when calling evaluate. | No       |
 
-### `lazy.evaluate(target)`
+#### Returns
+
+`Lazy` - The Lazy instance.
+
+### `lazy.evaluate(target) => number[]`
 
 Evaluates the lazy value.
 
@@ -70,15 +74,26 @@ Evaluates the lazy value.
 
 ## Examples
 
+The following examples are available in `/examples`.
+
 ### Basic
 
 ```ts
-import Lazy from 'yld-lazy';
+const lazyValue = new Lazy();
 
+lazyValue.add((a) => a + 1);
+
+const result = lazyValue.evaluate([123]); // [124]
+```
+
+### Chained
+
+```ts
 const lazyValue = new Lazy();
 
 lazyValue.add((a) => a + 1);
 lazyValue.add((a) => a * 2);
+// or lazyValue.add((a) => a + 1, 10).add((a) => a * 2);
 
 const result = lazyValue.evaluate([123]); // [248]
 ```
@@ -86,8 +101,6 @@ const result = lazyValue.evaluate([123]); // [248]
 ### With item from target array
 
 ```ts
-import Lazy from 'yld-lazy';
-
 const lazyValue = new Lazy();
 
 lazyValue.add((a, b) => a + b, 10);
@@ -98,13 +111,11 @@ const result = lazyValue.evaluate([10, 20]); // [20, 30]
 ### With multiple arguments
 
 ```ts
-import Lazy from 'yld-lazy';
-
 const lazyValue = new Lazy();
 
 lazyValue.add((a, b, c) => a * b + c, -1, 10);
 
-const result = await lazyValue.evaluate([10, 20]); // [0, -10]
+const result = lazyValue.evaluate([10, 20]); // [0, -10]
 ```
 
 ## License
@@ -114,6 +125,9 @@ MIT License
 ## Notes
 
 JS version available in `index.js`.
+
 TS version available in `index.ts`.
+
 TS version with support for strings available in `index-generics.ts`.
+
 TS version with caching available in `index-cache.ts`.
