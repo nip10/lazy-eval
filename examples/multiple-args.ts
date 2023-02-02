@@ -1,4 +1,4 @@
-import Lazy from '../index';
+import Lazy from '../src/index';
 
 const lazyValue = new Lazy();
 lazyValue.add((a, b, c) => a * b + c, -1, 10);
