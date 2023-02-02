@@ -1,5 +1,5 @@
 import { describe, it, expect } from 'vitest';
-import Lazy from '../index-generics';
+import Lazy from '../src/index-generics';
 
 describe('Lazy', () => {
   it('should add functions and evaluate them on the target', () => {
