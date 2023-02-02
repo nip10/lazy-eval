@@ -13,7 +13,7 @@
     "url": "https://github.com/nip10/yld-lazy/issues"
   },
   "license": "MIT",
-  "homepage": "https://github.com/nip10/ts-package#readme",
+  "homepage": "https://github.com/nip10/yld-lazy#readme",
   "main": "dist/index.js",
   "module": "dist/index.mjs",
   "types": "dist/index.d.ts",
