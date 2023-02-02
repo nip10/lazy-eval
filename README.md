@@ -118,6 +118,30 @@ lazyValue.add((a, b, c) => a * b + c, -1, 10);
 const result = lazyValue.evaluate([10, 20]); // [0, -10]
 ```
 
+## Development
+
+### Install dependencies
+
+```sh
+yarn install
+```
+
+### Run tests
+
+```sh
+yarn run test
+```
+
+We use [Vitest](https://vitest.dev/) for testing.
+
+### Build
+
+```sh
+yarn run build
+```
+
+More scripts are available in `package.json` for misc tasks such as lint, format...
+
 ## License
 
 MIT License
