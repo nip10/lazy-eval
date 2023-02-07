@@ -11,7 +11,7 @@ Lazy evaluation is an evaluation strategy which delays the evaluation of an expr
 First, import the `Lazy` class.
 
 ```ts
-import Lazy from '<path-to-src>/index.ts>';
+import Lazy from '<path-to-src>/index.ts';
 ```
 
 You can also import from the dist folder like a module (required build first):
