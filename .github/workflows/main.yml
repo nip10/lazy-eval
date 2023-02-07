@@ -1,0 +1,22 @@
+name: Deploy
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  preview:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@master
+      - name: Upload ZIP to S3
+        uses: NotCoffee418/s3-zip-upload@v1
+        env:
+          AWS_SECRET_ID: ${{ secrets.AWS_KEY_ID }}
+          AWS_SECRET_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+          AWS_BUCKET: ${{ secrets.AWS_BUCKET }}
+          AWS_REGION: eu-west-2
+          SOURCE_MODE: ZIP
+          SOURCE_PATH: ./
+          DEST_FILE: lazy.zip
