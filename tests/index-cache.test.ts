@@ -24,4 +24,12 @@ describe('Lazy', () => {
       .evaluate([1, 2, 3]);
     expect(result).toStrictEqual([0, -1, -2]);
   });
+  // The reason why this implementation is flawed... Math.random() is not deterministic.
+  // it('should add functions and evaluate them on the target', () => {
+  //   const lazyObj = new Lazy();
+  //   const result = lazyObj
+  //     .add((a) => a * Math.floor(Math.random() * 3))
+  //     .evaluate([1, 2, 3]);
+  //   expect(result).toStrictEqual([0, 0, 0]);
+  // });
 });

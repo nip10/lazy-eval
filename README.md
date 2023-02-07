@@ -93,7 +93,7 @@ const lazyValue = new Lazy();
 
 lazyValue.add((a) => a + 1);
 lazyValue.add((a) => a * 2);
-// or lazyValue.add((a) => a + 1, 10).add((a) => a * 2);
+// or lazyValue.add((a) => a + 1).add((a) => a * 2);
 
 const result = lazyValue.evaluate([123]); // [248]
 ```
@@ -148,10 +148,10 @@ MIT License
 
 ## Notes
 
-JS version available in `index.js`.
+JS version available in `index-javascript.js`.
 
 TS version available in `index.ts`.
 
 TS version with support for strings available in `index-generics.ts`.
 
-TS version with caching available in `index-cache.ts`.
+TS version with cache available in `index-cache.ts`. This was just for fun and it doesn't actually work because the functions are not deterministic.
