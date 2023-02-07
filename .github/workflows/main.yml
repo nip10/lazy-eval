@@ -10,13 +10,16 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@master
-      - name: Upload ZIP to S3
-        uses: NotCoffee418/s3-zip-upload@v1
-        env:
-          AWS_SECRET_ID: ${{ secrets.AWS_KEY_ID }}
-          AWS_SECRET_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
-          BUCKET_NAME: ${{ secrets.AWS_BUCKET }}
-          AWS_REGION: eu-west-2
-          SOURCE_MODE: ZIP
-          SOURCE_PATH: ./
-          DEST_FILE: lazy.zip
+      - name: ZIP
+        uses: vimtor/action-zip@master
+        with:
+          files: ./
+      - name: Upload S3
+        uses: shallwefootball/s3-upload-action@master
+        id: S3
+        with:
+          aws_key_id: ${{ secrets.AWS_KEY_ID  }}
+          aws_secret_access_key: ${{ secrets.AWS_SECRET_ACCESS_KEY}}
+          aws_bucket: ${{ secrets.AWS_BUCKET }}
+          source_dir: ${{ github.workspace }}
+          destination_dir: ''
