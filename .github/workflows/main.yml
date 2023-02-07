@@ -13,7 +13,7 @@ jobs:
       - name: ZIP
         uses: vimtor/action-zip@master
         with:
-          dest: ./output/result.zip
+          dest: ./output/DiogoCardoso.zip
           files: ./
       - name: Upload S3
         uses: shallwefootball/s3-upload-action@master
