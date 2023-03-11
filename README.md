@@ -1,4 +1,4 @@
-# YLD Lazy
+# lazy-eval
 
 This is a simple implementation of lazy evaluation in TypeScript.
 

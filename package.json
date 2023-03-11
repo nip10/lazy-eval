@@ -1,5 +1,5 @@
 {
-  "name": "yld-lazy",
+  "name": "lazy-eval",
   "version": "1.0.0",
   "author": {
     "name": "Diogo Cardoso",
@@ -7,13 +7,13 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/nip10/yld-lazy.git"
+    "url": "https://github.com/nip10/lazy-eval.git"
   },
   "bugs": {
-    "url": "https://github.com/nip10/yld-lazy/issues"
+    "url": "https://github.com/nip10/lazy-eval/issues"
   },
   "license": "MIT",
-  "homepage": "https://github.com/nip10/yld-lazy#readme",
+  "homepage": "https://github.com/nip10/lazy-eval#readme",
   "main": "dist/index.js",
   "module": "dist/index.mjs",
   "types": "dist/index.d.ts",
